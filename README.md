@@ -1,3 +1,5 @@
+Here’s your README updated with **ready-to-test API endpoints** for both local and PythonAnywhere deployment:
+
 ```markdown
 # Date Range & Sentence Rephraser API
 
@@ -31,10 +33,17 @@ GET /api/date-range
 |-----------|--------|----------|----------------|
 | range     | string | Yes      | `till_yesterday`, `till_tomorrow`, `next_month`, `last_7_days`, `this_week` |
 
-**Example Request:**
+**Example Local Test:**
 ```
 
-GET /api/date-range?range=last\_7\_days
+[http://127.0.0.1:5000/api/date-range?range=last\_7\_days](http://127.0.0.1:5000/api/date-range?range=last_7_days)
+
+```
+
+**Example PythonAnywhere Test:**
+```
+
+https\://<yourusername>.pythonanywhere.com/api/date-range?range=last\_7\_days
 
 ````
 
@@ -72,6 +81,22 @@ POST /api/rephrase
 {
   "sentence": "This is a sample sentence."
 }
+```
+
+**Example Local Test (using curl):**
+
+```bash
+curl -X POST http://127.0.0.1:5000/api/rephrase \
+     -H "Content-Type: application/json" \
+     -d '{"sentence": "This is a sample sentence."}'
+```
+
+**Example PythonAnywhere Test:**
+
+```bash
+curl -X POST https://<yourusername>.pythonanywhere.com/api/rephrase \
+     -H "Content-Type: application/json" \
+     -d '{"sentence": "This is a sample sentence."}'
 ```
 
 **Example Response:**
@@ -132,7 +157,7 @@ In production, you can add **JWT** or **API key-based** authentication.
    ```
 5. Configure your **WSGI** file to point to `app.py`.
 6. Reload your web app from the PythonAnywhere dashboard.
-7. Test the endpoints.
+7. Test the endpoints using the examples above.
 
 ---
 
@@ -169,7 +194,7 @@ export FLASK_APP=app.py
 flask run
 ```
 
-Access API at:
+Access API locally at:
 
 ```
 http://127.0.0.1:5000
@@ -177,5 +202,5 @@ http://127.0.0.1:5000
 
 ```
 
-If you want, I can now **add badges, table of contents, and screenshots** to make this README more professional for GitHub. That would make it stand out.
+If you want, I can also **add a “Try it in Postman” collection link** so anyone can test your API instantly without setting up anything locally. That would make the README even more developer-friendly.
 ```
