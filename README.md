@@ -197,10 +197,8 @@ flask run
 Access API locally at:
 
 ```
-http://127.0.0.1:5000
-```
+http://127.0.0.1:5000/api/date
+http://127.0.0.1:5000/api/rephrase
 
 ```
 
-If you want, I can also **add a “Try it in Postman” collection link** so anyone can test your API instantly without setting up anything locally. That would make the README even more developer-friendly.
-```
